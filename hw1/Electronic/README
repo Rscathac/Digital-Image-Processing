@@ -1,0 +1,54 @@
+# DIP Homework Assignment #1 # Month Day, Year
+# Name: Chen Chien Cheng
+# ID #: B05902115
+# email: b05902115@ntu.edu.tw
+# compiled on MAC OSX iterm2 with g++
+
+
+
+# define your compiler and linker CC=gcc
+CC = g++
+CFLAGS+=
+LDFLAGS+=
+
+.PHONY: all clean
+
+all : warm_up problem1 low_pass_filtering median_filtering clean
+
+warm_up: warm_up.cpp
+	@if [ ! -d output ]; then \
+		mkdir -p output; \
+	fi;
+	@echo "Warm-up"
+	@echo "compiling and linking the code"
+	$(CC) -o warm_up  warm_up.cpp $(CFLAGS)
+	@echo "running the program warm-up"
+	./warm_up
+
+
+problem1: problem1.cpp
+	@if [ ! -d csv ]; then \
+		mkdir -p csv; \
+	fi;
+	@echo "Problem 1"
+	@echo "compiling and linking the code"
+	$(CC) -o problem1  problem1.cpp $(CFLAGS)
+	@echo "running the program problem1"
+	./problem1
+
+low_pass_filtering: low_pass_filtering.cpp
+	@echo "Low pass filtering"
+	@echo "compiling and linking the code"
+	$(CC) -o low_pass_filtering low_pass_filtering.cpp $(CFLAGS)
+	@echo "running the program low_pass_filtering"
+	./low_pass_filtering
+
+median_filtering: median_filtering.cpp
+	@echo "median filtering"
+	@echo "compiling and linking the code"
+	$(CC) -o median_filtering median_filtering.cpp $(CFLAGS)
+	@echo "running the program median_filtering"
+	./median_filtering
+
+clean:
+	$(RM) warm_up problem1 low_pass_filtering median_filtering
