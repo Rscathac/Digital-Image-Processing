@@ -1,0 +1,70 @@
+# DIP Homework Assignment #2
+# Name: Chen Chien Cheng
+# ID #: B05902115
+# email: b05902115@ntu.edu.tw
+# compiled on MAC OSX iterm2 with g++
+
+
+
+# define your compiler and linker CC=gcc
+CC = g++
+CFLAGS+=
+LDFLAGS+=
+
+.PHONY: all clean
+
+all : 1st_order_edge 2nd_order_edge canny_edge edge_crispen swirled_disk clean
+
+1st_order_edge: 1st_order_edge.cpp
+	@if [ ! -d output ]; then \
+		mkdir -p output; \
+	fi;
+	@echo "1st_order_edge"
+	@echo "compiling and linking the code"
+	$(CC) -o 1st_order_edge 1st_order_edge.cpp $(CFLAGS)
+	@echo "running the program 1st_order_edge"
+	./1st_order_edge
+
+
+2nd_order_edge: 2nd_order_edge.cpp
+	@if [ ! -d output ]; then \
+		mkdir -p output; \
+	fi;
+	@echo "2nd_order_edge"
+	@echo "compiling and linking the code"
+	$(CC) -o 2nd_order_edge 2nd_order_edge.cpp $(CFLAGS)
+	@echo "running the program 2nd_order_edge"
+	./2nd_order_edge
+
+canny_edge: canny_edge.cpp
+	@if [ ! -d output ]; then \
+		mkdir -p output; \
+	fi;
+	@echo "canny_edge"
+	@echo "compiling and linking the code"
+	$(CC) -o canny_edge canny_edge.cpp $(CFLAGS)
+	@echo "running the program canny_edge"
+	./canny_edge
+
+edge_crispen: edge_crispen.cpp
+	@if [ ! -d output ]; then \
+		mkdir -p output; \
+	fi;
+	@echo "edge_crispen"
+	@echo "compiling and linking the code"
+	$(CC) -o edge_crispen edge_crispen.cpp $(CFLAGS)
+	@echo "running the program edge_crispen"
+	./edge_crispen
+
+swirled_disk: swirled_disk.cpp
+	@if [ ! -d output ]; then \
+		mkdir -p output; \
+	fi;
+	@echo "swirled_disk"
+	@echo "compiling and linking the code"
+	$(CC) -o swirled_disk swirled_disk.cpp $(CFLAGS)
+	@echo "running the program swirled_disk"
+	./swirled_disk
+
+clean:
+	$(RM) 1st_order_edge 2nd_order_edge canny_edge edge_crispen swirled_disk clean
