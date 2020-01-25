@@ -17,22 +17,13 @@
 
   * Required package
 
-    ```python
-  pip3 install cv2
-    ```
+    ```pip3 install cv2```
 
-    ```
-  pip3 install imutils
-    ```
+    ```pip3 install imutils```
 
   * Run code
-  
-    ```
-  python demo.py
-    ```
-    
-    ```
-    python test.py
-    ```
-    
-    
+
+    ```python demo.py```
+
+    ```python test.py```
+
