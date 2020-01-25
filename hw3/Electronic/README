@@ -1,0 +1,80 @@
+# DIP Homework Assignment #3
+# Name: Chen Chien Cheng
+# ID #: B05902115
+# email: b05902115@ntu.edu.tw
+# compiled on MAC OSX iterm2 with g++
+
+
+
+# define your compiler and linker CC=gcc
+CC = g++
+CFLAGS+=
+LDFLAGS+=
+
+.PHONY: all clean
+
+all : boundary_extraction connected_component_labeling thinning skeletoning k_means Exchange_texture 
+boundary_extraction: boundary_extraction
+	@if [ ! -d output ]; then \
+		mkdir -p output; \
+	fi;
+	@echo "boundary_extraction"
+	@echo "compiling and linking the code"
+	$(CC) -o boundary_extraction boundary_extraction.cpp $(CFLAGS)
+	@echo "running the program 1st_order_edge"
+	./boundary_extraction
+
+
+connected_component_labeling: connected_component_labeling.cpp
+	@if [ ! -d output ]; then \
+		mkdir -p output; \
+	fi;
+	@echo "connected_component_labeling"
+	@echo "compiling and linking the code"
+	$(CC) -o connected_component_labeling connected_component_labeling.cpp $(CFLAGS)
+	@echo "running the program connected_component_labeling"
+	./connected_component_labeling
+
+thinning: thinning.cpp
+	@if [ ! -d output ]; then \
+		mkdir -p output; \
+	fi;
+	@echo "thinning"
+	@echo "compiling and linking the code"
+	$(CC) -o thinning thinning.cpp $(CFLAGS)
+	@echo "running the program thinning"
+	./thinning
+
+skeletoning: skeletoning.cpp
+	@if [ ! -d output ]; then \
+		mkdir -p output; \
+	fi;
+	@echo "skeletoning"
+	@echo "compiling and linking the code"
+	$(CC) -o skeletoning skeletoning.cpp $(CFLAGS)
+	@echo "running the program skeletoning"
+	./skeletoning
+
+k_means: k_means.cpp
+	@if [ ! -d output ]; then \
+		mkdir -p output; \
+	fi;
+	@echo "k_means"
+	@echo "compiling and linking the code"
+	$(CC) -o k_means k_means.cpp $(CFLAGS)
+	@echo "running the program k_means"
+	./k_means
+
+Exchange_texture: Exchange_texture.cpp
+	@if [ ! -d output ]; then \
+		mkdir -p output; \
+	fi;
+	@echo "Exchange_texture"
+	@echo "compiling and linking the code"
+	$(CC) -o Exchange_texture Exchange_texture.cpp $(CFLAGS)
+	@echo "running the program Exchange_texture"
+	./Exchange_texture
+
+clean:
+	$(RM) boundary_extraction connected_component_labeling thinning skeletoning k_means Exchange_texture
+
