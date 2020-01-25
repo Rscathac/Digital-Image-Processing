@@ -1,0 +1,70 @@
+# DIP Homework Assignment #3
+# Name: Chen Chien Cheng
+# ID #: B05902115
+# email: b05902115@ntu.edu.tw
+# compiled on MAC OSX iterm2 with g++
+
+
+
+# define your compiler and linker CC=gcc
+CC = g++
+CFLAGS+=
+LDFLAGS+=
+
+.PHONY: all clean
+
+all : 1st_order_edge hough_transform global_hist_equalization sig_line_10 sig_line_20 clean
+1st_order_edge: 1st_order_edge.cpp
+	@if [ ! -d output ]; then \
+		mkdir -p output; \
+	fi;
+	@echo "1st_order_edge"
+	@echo "compiling and linking the code"
+	$(CC) -o 1st_order_edge 1st_order_edge.cpp $(CFLAGS)
+	@echo "running the program 1st_order_edge"
+	./1st_order_edge
+
+hough_transform: hough_transform.cpp
+	@if [ ! -d output ]; then \
+		mkdir -p output; \
+	fi;
+	@echo "hough_transform"
+	@echo "compiling and linking the code"
+	$(CC) -o hough_transform hough_transform.cpp $(CFLAGS)
+	@echo "running the program hough_transform"
+	./hough_transform
+
+
+global_hist_equalization: global_hist_equalization.cpp
+	@if [ ! -d output ]; then \
+		mkdir -p output; \
+	fi;
+	@echo "global_hist_equalization"
+	@echo "compiling and linking the code"
+	$(CC) -o global_hist_equalization global_hist_equalization.cpp $(CFLAGS)
+	@echo "running the program global_hist_equalization"
+	./global_hist_equalization
+
+sig_line_10: sig_line_10.cpp
+	@if [ ! -d output ]; then \
+		mkdir -p output; \
+	fi;
+	@echo "sig_line_10"
+	@echo "compiling and linking the code"
+	$(CC) -o sig_line_10 sig_line_10.cpp $(CFLAGS)
+	@echo "running the program sig_line_10"
+	./sig_line_10
+
+sig_line_20: sig_line_20.cpp
+	@if [ ! -d output ]; then \
+		mkdir -p output; \
+	fi;
+	@echo "sig_line_20"
+	@echo "compiling and linking the code"
+	$(CC) -o sig_line_20 sig_line_20.cpp $(CFLAGS)
+	@echo "running the program sig_line_20"
+	./sig_line_20
+
+clean:
+	$(RM) 1st_order_edge global_hist_equalization hough_transform sig_line_10 sig_line_20
+
